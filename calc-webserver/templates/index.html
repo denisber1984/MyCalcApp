@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <form action="/calculate" method="post">
+        <h1>Welcome to the Tip Calculator</h1>
+        <label for="total">Total Bill:</label>
+        <input type="number" id="total" name="total" step="0.01" required>
+        <label for="tip">Tip Percentage:</label>
+        <input type="number" id="tip" name="tip" required>
+        <label for="people">Number of People:</label>
+        <input type="number" id="people" name="people" required>
+        <input type="submit" value="Calculate">
+    </form>
+</body>
+</html>

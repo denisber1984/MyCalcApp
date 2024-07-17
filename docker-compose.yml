@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    build: ./calc-webserver
+    ports:
+      - "5000:5000"
+    depends_on:
+      - calc-app
+
+  calc-app:
+    build: ./calc-app
+    ports:
+      - "5001:5000"
