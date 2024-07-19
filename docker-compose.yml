@@ -1,14 +1,20 @@
 version: '3'
-
 services:
-  web:
-    build: ./calc-webserver
-    ports:
-      - "5000:5000"
-    depends_on:
-      - calc-app
-
   calc-app:
-    build: ./calc-app
+    build:
+      context: ./calc-app
+      dockerfile: Dockerfile
+    container_name: calc-app
     ports:
       - "5001:5000"
+    expose:
+      - "5000"
+  web:
+    build:
+      context: ./calc-webserver
+      dockerfile: Dockerfile
+    container_name: web
+    ports:
+      - "8087:8080"
+    depends_on:
+      - calc-app

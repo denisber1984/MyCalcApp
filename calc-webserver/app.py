@@ -3,11 +3,9 @@ import requests
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def home():
     return render_template('index.html')
-
 
 @app.route('/calculate', methods=['POST'])
 def calculate():
@@ -28,6 +26,5 @@ def calculate():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=8080)
